@@ -1,4 +1,4 @@
-Ini merupakan portofolio saya membuat automation menggunakan Cypress
+Ini merupakan portofolio saya membuat automation testing website menggunakan Cypress
 
 Install cypress :
 1. Install Nodejs di laptop/PC Anda dapat diunduh melalui link berikut https://nodejs.org/en/download
