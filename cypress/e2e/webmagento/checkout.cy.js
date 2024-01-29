@@ -1,5 +1,7 @@
 describe('Proceed to Checkout', () => {
     it('Berhasil Checkout Tanpa Login', () => {
+      cy.clearAllCookies()
+      cy.clearAllLocalStorage()
       cy.visit('https://magento.softwaretestingboard.com/')
       cy.get('#ui-id-5').trigger('mouseover')
       cy.get('#ui-id-17').trigger('mouseover')
