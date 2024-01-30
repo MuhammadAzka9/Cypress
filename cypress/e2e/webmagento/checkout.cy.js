@@ -11,7 +11,6 @@ describe('Proceed to Checkout', () => {
     cy.get('#send2').click()
     cy.wait(500)
     cy.get('.home-main > .content > .title').should('contain.text', 'Get fit and look fab in new seasonal styles')
-    cy.visit('https://magento.softwaretestingboard.com/')
     cy.get('#ui-id-5').trigger('mouseover')
     cy.get('#ui-id-17').trigger('mouseover')
     cy.get("#ui-id-19").click()
