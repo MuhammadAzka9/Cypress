@@ -1,3 +1,5 @@
+import loginElement from '../../support/loginElement'
+const userDataLogin = require('../../fixtures/userDataLogin.json')
 describe('Search', () => { 
     it('Search barang tanpa login', () => {
         cy.clearAllCookies()
@@ -5,5 +7,31 @@ describe('Search', () => {
         cy.visit('https://magento.softwaretestingboard.com/')
         cy.get('#search').type('jacket{enter}')
         cy.get('.search > .block').should("contain.text", "Jacket, t-shirt, jeans for men, jeans for women,pants")
+    })
+    it('Search barang dengan login', () => {
+        cy.clearAllCookies()
+        cy.clearAllLocalStorage()
+        cy.visit('https://magento.softwaretestingboard.com/')
+        cy.get('.panel > .header > .authorization-link > a').click()
+        cy.get(loginElement.Uname).type(userDataLogin.inputUname)
+        cy.get(loginElement.pass).type(userDataLogin.inputPass)
+        cy.get('#send2').click()
+        cy.wait(500)
+        cy.get('.home-main > .content > .title').should('contain.text', 'Get fit and look fab in new seasonal styles')
+        cy.get('#search').type('watch{enter}')
+        cy.get('.search > .block').should("contain.text", "watch, T-shirt")
+    })
+    it('Search barang yang tidak tersedia', () => {
+        cy.clearAllCookies()
+        cy.clearAllLocalStorage()
+        cy.visit('https://magento.softwaretestingboard.com/')
+        cy.get('.panel > .header > .authorization-link > a').click()
+        cy.get(loginElement.Uname).type(userDataLogin.inputUname)
+        cy.get(loginElement.pass).type(userDataLogin.inputPass)
+        cy.get('#send2').click()
+        cy.wait(500)
+        cy.get('.home-main > .content > .title').should('contain.text', 'Get fit and look fab in new seasonal styles')
+        cy.get('#search').type('milk{enter}')
+        cy.get('.column > .message').should("contain.text", "Your search returned no results.")
     })
 })
