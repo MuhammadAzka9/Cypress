@@ -47,7 +47,7 @@ describe('Search', () => {
         cy.get('#search').type('a{enter}')
         cy.get('.column > .message').should("contain.text", "Minimum Search query length is 3")
     })
-    it('Search by Category', () => {
+    it('Search by category', () => {
         cy.clearAllCookies()
         cy.clearAllLocalStorage()
         cy.visit('https://magento.softwaretestingboard.com/')

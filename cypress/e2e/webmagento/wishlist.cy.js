@@ -1,7 +1,7 @@
 import loginElement from '../../support/loginElement'
 const userDataLogin = require('../../fixtures/userDataLogin.json')
 describe('Wish list', () => {
-    it('Add To Wish list', () => {
+    it('Add to wish list', () => {
         cy.clearAllCookies()
         cy.clearAllLocalStorage()
         cy.visit('https://magento.softwaretestingboard.com')
@@ -20,7 +20,7 @@ describe('Wish list', () => {
         cy.contains('Olivia 1/4 Zip Light Jacket has been added to your Wish List. Click here to continue shopping.').should('exist')
     })
 
-    it('View Wish list Page With Item', () => {
+    it('View wish list page with item', () => {
         cy.clearAllCookies()
         cy.clearAllLocalStorage()
         cy.visit('https://magento.softwaretestingboard.com')
@@ -34,7 +34,7 @@ describe('Wish list', () => {
         cy.contains('1 Item').should('exist')
     })  
 
-    it('View Wish list Page Without Item', () => {
+    it('View wish list page without item', () => {
         cy.clearAllCookies()
         cy.clearAllLocalStorage()
         cy.visit('https://magento.softwaretestingboard.com')
@@ -48,7 +48,7 @@ describe('Wish list', () => {
         cy.contains('You have no items in your wish list.').should('exist')
     })
 
-    it('View Wish list Page With Item', () => {
+    it('View wish list page with item', () => {
         cy.clearAllCookies()
         cy.clearAllLocalStorage()
         cy.visit('https://magento.softwaretestingboard.com')
@@ -62,7 +62,7 @@ describe('Wish list', () => {
         cy.get('.message-success')
         cy.contains("Olivia 1/4 Zip Light Jacket has been removed from your Wish List.").should('exist')
     })
-    it('View wish list Page No Item', () => {
+    it('View wish list page no item', () => {
         cy.clearAllCookies()
         cy.clearAllLocalStorage()
         cy.visit('https://magento.softwaretestingboard.com')

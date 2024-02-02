@@ -2,7 +2,7 @@ import loginElement from '../../support/loginElement'
 const userDataLogin = require('../../fixtures/userDataLogin.json')
 
 describe('Choose Product', () => {
-    it('Success Choose Product Women Tops', () => {
+    it('Success choose product women tops', () => {
       cy.visit('https://magento.softwaretestingboard.com')
       cy.contains('Sign In').click()
       cy.url().should('include','customer/account/login/referer')
@@ -22,7 +22,7 @@ describe('Choose Product', () => {
       cy.wait(2000); 
     })
   
-    it('Success Choose Product Men Bottom', () => {
+    it('Success choose product men bottom', () => {
       cy.visit('https://magento.softwaretestingboard.com')
       cy.contains('Sign In').click()
       cy.url().should('include','customer/account/login/referer')
@@ -42,7 +42,7 @@ describe('Choose Product', () => {
       cy.wait(2000); 
     })
   
-    it('Failed Choose Product Women Tops Because dont choose color & size', () => {
+    it('Failed choose product women tops because dont choose color & size', () => {
       cy.visit('https://magento.softwaretestingboard.com')
       cy.contains('Sign In').click()
       cy.url().should('include','customer/account/login/referer')
@@ -62,7 +62,7 @@ describe('Choose Product', () => {
       cy.wait(2000); 
     })
   
-    it('Failed Choose Product Men Bottom Because dont choose color & size', () => {
+    it('Failed choose product men bottom because dont choose color & size', () => {
       cy.visit('https://magento.softwaretestingboard.com')
       cy.contains('Sign In').click()
       cy.url().should('include','customer/account/login/referer')

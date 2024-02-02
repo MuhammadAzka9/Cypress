@@ -1,14 +1,14 @@
 import loginElement from '../../support/loginElement'
 const userDataLogin = require('../../fixtures/userDataLogin.json')
 describe('Proceed to Checkout', () => {
-  it('Berhasil Checkout dengan Login', () => {
+  it('Berhasil checkout dengan login', () => {
     cy.clearAllCookies()
     cy.clearAllLocalStorage()
     cy.visit('https://magento.softwaretestingboard.com/')
     cy.get('.panel > .header > .authorization-link > a').click()
     cy.get(loginElement.Uname).type(userDataLogin.inputUname)
     cy.get(loginElement.pass).type(userDataLogin.inputPass)
-    cy.get('[class="action login primary"]').click()
+    cy.get('.login-container > .block-customer-login > .block-content > #login-form > .fieldset > .actions-toolbar > div.primary > #send2').click()
     cy.wait(500)
     cy.get('.home-main > .content > .title').should('contain.text', 'Get fit and look fab in new seasonal styles')
     cy.get('#ui-id-5').trigger('mouseover')
@@ -29,7 +29,7 @@ describe('Proceed to Checkout', () => {
     cy.get('.payment-method-content > :nth-child(4) > div.primary > .action').click()
     cy.get('.base').should("contain.text", "Thank you for your purchase!")
   })
-  it('Berhasil Checkout Tanpa Login', () => {
+  it('Berhasil checkout tanpa login', () => {
     cy.clearAllCookies()
     cy.clearAllLocalStorage()
     cy.visit('https://magento.softwaretestingboard.com/')
@@ -64,14 +64,14 @@ describe('Proceed to Checkout', () => {
     cy.get('.payment-method-content > :nth-child(4) > div.primary > .action').click()
     cy.get('.base').should("contain.text", "Thank you for your purchase!")
   })
-  it('Gagal Checkout karena jumlah barang 0', () => {
+  it('Gagal checkout karena jumlah barang 0', () => {
     cy.clearAllCookies()
     cy.clearAllLocalStorage()
     cy.visit('https://magento.softwaretestingboard.com/')
     cy.get('.panel > .header > .authorization-link > a').click()
     cy.get(loginElement.Uname).type(userDataLogin.inputUname)
     cy.get(loginElement.pass).type(userDataLogin.inputPass)
-    cy.get('[class="action login primary"]').click()
+    cy.get('.login-container > .block-customer-login > .block-content > #login-form > .fieldset > .actions-toolbar > div.primary > #send2').click()
     cy.wait(500)
     cy.get('.home-main > .content > .title').should('contain.text', 'Get fit and look fab in new seasonal styles')
     cy.get('#ui-id-6').trigger('mouseover')
