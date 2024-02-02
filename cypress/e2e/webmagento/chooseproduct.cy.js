@@ -9,7 +9,7 @@ describe('Choose Product', () => {
       cy.get(loginElement.Uname).type(userDataLogin.inputUname)
       cy.get(loginElement.pass).type(userDataLogin.inputPass)
       cy.wait(2000); 
-      cy.get('[class="action login primary"]').click()
+      cy.get('.login-container > .block-customer-login > .block-content > #login-form > .fieldset > .actions-toolbar > div.primary > #send2').click()
       cy.url().should('include','magento.softwaretestingboard.com')
       cy.wait(2000); 
       cy.get('#ui-id-3 > span').click()
@@ -29,7 +29,7 @@ describe('Choose Product', () => {
       cy.get(loginElement.Uname).type(userDataLogin.inputUname)
       cy.get(loginElement.pass).type(userDataLogin.inputPass)
       cy.wait(2000); 
-      cy.get('[class="action login primary"]').click()
+      cy.get('.login-container > .block-customer-login > .block-content > #login-form > .fieldset > .actions-toolbar > div.primary > #send2').click()
       cy.url().should('include','magento.softwaretestingboard.com')
       cy.wait(2000); 
       cy.get('#ui-id-3 > span').click()
@@ -49,7 +49,7 @@ describe('Choose Product', () => {
       cy.get(loginElement.Uname).type(userDataLogin.inputUname)
       cy.get(loginElement.pass).type(userDataLogin.inputPass)
       cy.wait(2000); 
-      cy.get('[class="action login primary"]').click()
+      cy.get('.login-container > .block-customer-login > .block-content > #login-form > .fieldset > .actions-toolbar > div.primary > #send2').click()
       cy.url().should('include','magento.softwaretestingboard.com')
       cy.wait(2000); 
       cy.get('#ui-id-3 > span').click()
@@ -69,7 +69,7 @@ describe('Choose Product', () => {
       cy.get(loginElement.Uname).type(userDataLogin.inputUname)
       cy.get(loginElement.pass).type(userDataLogin.inputPass)
       cy.wait(2000); 
-      cy.get('[class="action login primary"]').click()
+      cy.get('.login-container > .block-customer-login > .block-content > #login-form > .fieldset > .actions-toolbar > div.primary > #send2').click()
       cy.url().should('include','magento.softwaretestingboard.com')
       cy.wait(2000); 
       cy.get('#ui-id-3 > span').click()

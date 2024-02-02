@@ -9,7 +9,7 @@ describe('Logout', () => {
       cy.get('.panel > .header > .authorization-link > a').click()
       cy.get(loginElement.Uname).type(userDataLogin.inputUname)
       cy.get(loginElement.pass).type(userDataLogin.inputPass)
-      cy.get('#send2').click()
+      cy.get('.login-container > .block-customer-login > .block-content > #login-form > .fieldset > .actions-toolbar > div.primary > #send2').click()
       cy.wait(500)
       cy.get('.home-main > .content > .title').should('contain.text', 'Get fit and look fab in new seasonal styles')
       cy.get(':nth-child(2) > .customer-welcome > .customer-name > .action').click()
