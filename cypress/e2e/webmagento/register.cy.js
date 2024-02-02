@@ -53,7 +53,7 @@ describe('Register', () => {
     cy.get('#email_address-error').should('have.text', userDataRegister.mandatoryField)
    })
   })
-  it('Register New Account without Password & Confirm Password', () => {
+  it('Register without password & confirm password', () => {
     cy.generateRandomEmail().then((randomEmail) => {
     cy.visit('https://magento.softwaretestingboard.com/'),
     cy.contains('Create an Account').click()
